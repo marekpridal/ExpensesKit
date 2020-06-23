@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 // swiftlint:disable type_body_length required_deinit file_length nesting function_body_length
 public final class Networking: NSObject, Api {
