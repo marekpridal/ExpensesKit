@@ -19,7 +19,9 @@ public final class Networking: NSObject, Api {
     // MARK: - Private properties
     private let endpoint: EndpointProtocol
     private let log: LogDelegate.Type?
+    #if !os(Linux)
     private let certificatePinningHandler: ((SecTrust, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?
+    #endif
     private var verifyReceiptRequestCalled = false
 
     fileprivate static var encoder: JSONEncoder {
@@ -53,12 +55,20 @@ public final class Networking: NSObject, Api {
     // MARK: - URL Session
     lazy var session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
 
+    #if os(Linux)
+    public init(endpoint: EndpointProtocol, logDelegate: LogDelegate.Type?, securityHelper: SecurityHelperProtocol) {
+        self.endpoint = endpoint
+        self.log = logDelegate
+        self.securityHelper = securityHelper
+    }
+    #else
     public init(endpoint: EndpointProtocol, logDelegate: LogDelegate.Type?, securityHelper: SecurityHelperProtocol, certificatePinningHandler: ((SecTrust, @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void)?) {
         self.endpoint = endpoint
         self.log = logDelegate
         self.securityHelper = securityHelper
         self.certificatePinningHandler = certificatePinningHandler
     }
+    #endif
 
     // MARK: - Init date
     public func initData(requestObject: InitRequestTO, completionHandler: @escaping (Result<InitResponseTO, Error>) -> Void) {
