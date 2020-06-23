@@ -33,6 +33,6 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "ExpensesKitTests",
-            dependencies: ["ExpensesKit"]),
+            dependencies: ["ExpensesKit"])
     ]
 )

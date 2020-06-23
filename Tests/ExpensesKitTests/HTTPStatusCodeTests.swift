@@ -49,7 +49,7 @@ class HTTPStatusCodeTests: XCTestCase {
 
             case 405...407:
                 XCTAssert(HTTPResponseCodeHandler.error(for: code, response: nil) is BadRequestError)
-                
+
             case 408:
                 XCTAssert(HTTPResponseCodeHandler.error(for: code, response: nil) is RequestTimeoutError)
 
