@@ -1301,6 +1301,7 @@ public final class Networking: NSObject, Api {
 }
 
 extension Networking: URLSessionDelegate {
+    #if !os(Linux)
     public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             if let serverTrust = challenge.protectionSpace.serverTrust {
@@ -1312,4 +1313,5 @@ extension Networking: URLSessionDelegate {
             }
         }
     }
+    #endif
 }
