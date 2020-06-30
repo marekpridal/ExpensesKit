@@ -1,0 +1,12 @@
+// MARK: - Error codes
+"BAD_REQUEST_ERROR" = "Something is missing here ⚠️";
+"PAYMENT_REQUIRED_ERROR" = "You have to have active subscription for this operation";
+"FORBIDDEN_ERROR" = "There is something missing ❌";
+"CONFLICT_ERROR" = "It looks like this entry already exists ❌";
+"REDIRECTION_ERROR" = "It looks like your internet provider is trying to redirect you to Neverland 🔀";
+"GONE_ERROR" = "Please update to latest version from App Store ⤵️";
+"UPGRADE_REQUIRED_ERROR" = "Please update to latest version from App Store ⤵️";
+"SERVER_ERROR" = "This is not on your side 😇\n Please try it again or contact me 🙌";
+"NETWORK_AUTHENTICATION_REQUIRED_ERROR" = "Your public Wi-Fi probably requires some further action 🙂";
+"SERVER_IN_MAINTENANCE_ERROR" = "We are currently cleaning up our server, please try it again in a few minutes 🙂";
+"REQUEST_TIMEOUT_ERROR" = "Request timeout. Try it again.";

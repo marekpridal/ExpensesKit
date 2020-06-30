@@ -1,0 +1,12 @@
+// MARK: - Error codes
+"BAD_REQUEST_ERROR" = "Vypadá to, že něco není v pořádku. Zkontrolujte prosím, jestli něco neschází ⚠️";
+"PAYMENT_REQUIRED_ERROR" = "Pro tuto funkci je potřeba mít aktivní předplatné.";
+"FORBIDDEN_ERROR" = "Vypadá to, že něco není v pořádku. Zkontrolujte prosím, jestli něco neschází ❌";
+"CONFLICT_ERROR" = "Tenhle záznam u nás už existuje ❌";
+"REDIRECTION_ERROR" = "Vypadá to, že se Vás někdo snaží přesměrovat 🔀";
+"GONE_ERROR" = "Stáhněte si prosím z App Store aktualizaci aplikace ⤵️";
+"UPGRADE_REQUIRED_ERROR" = "Stáhněte si prosím z App Store aktualizaci aplikace ⤵️";
+"SERVER_ERROR" = "Chyba není na Vašem přijímači 😇\nZkuste to prosím znovu, případně mi napište na podporu. Za chybu se omlouvám 😔";
+"NETWORK_AUTHENTICATION_REQUIRED_ERROR" = "Zkontrolujte prosím, jestli Wi-Fi, na které jste připojeni, nepotřebuje ještě potvrdit podmínky 🙂";
+"SERVER_IN_MAINTENANCE_ERROR" = "Na serverech zrovna uklízíme, zkuste to prosím za chvíli 🙂";
+"REQUEST_TIMEOUT_ERROR" = "Časový limit požadavku vypršel. Zkuste to prosím znovu.";
