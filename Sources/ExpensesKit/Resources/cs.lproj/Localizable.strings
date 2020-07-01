@@ -10,3 +10,10 @@
 "NETWORK_AUTHENTICATION_REQUIRED_ERROR" = "Zkontrolujte prosím, jestli Wi-Fi, na které jste připojeni, nepotřebuje ještě potvrdit podmínky 🙂";
 "SERVER_IN_MAINTENANCE_ERROR" = "Na serverech zrovna uklízíme, zkuste to prosím za chvíli 🙂";
 "REQUEST_TIMEOUT_ERROR" = "Časový limit požadavku vypršel. Zkuste to prosím znovu.";
+
+// MARK: Custom BE error
+"CUSTOM_ERROR_DEFAULT_CURRENCY_MISMATCH" = "Aplikace zatím umí sdílet výdaje jen mezi uživateli se stejnou výchozí měnou";
+"CUSTOM_ERROR_USER_DOES_NOT_HAVE_ASSOCIATED_EMAIL" = "S tímto uživatelským jménem není spojená žádná e-mailová adresa a z toho důvodu není možné heslo obnovit.";
+"CUSTOM_ERROR_PASSWORD_RESET_EMAIL_MISMATCH" = "Uživatelské jméno a e-mail se neshodují.";
+"CUSTOM_ERROR_PASSWORD_CHANGE_WRONG_CURRENT_PASSWORD" = "Zadané současné heslo není správné.";
+"CUSTOM_ERROR_PASSWORD_TOO_WEAK" = "Zvolené heslo je příliš jednoduché";

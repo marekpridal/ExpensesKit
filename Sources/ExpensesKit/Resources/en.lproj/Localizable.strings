@@ -10,3 +10,10 @@
 "NETWORK_AUTHENTICATION_REQUIRED_ERROR" = "Your public Wi-Fi probably requires some further action 🙂";
 "SERVER_IN_MAINTENANCE_ERROR" = "We are currently cleaning up our server, please try it again in a few minutes 🙂";
 "REQUEST_TIMEOUT_ERROR" = "Request timeout. Try it again.";
+
+// MARK: Custom BE error
+"CUSTOM_ERROR_DEFAULT_CURRENCY_MISMATCH" = "Sharing between users with different default currency is not yet supported";
+"CUSTOM_ERROR_USER_DOES_NOT_HAVE_ASSOCIATED_EMAIL" = "There is no e-mail address associated with this username and because of that there is no way to reset your password";
+"CUSTOM_ERROR_PASSWORD_RESET_EMAIL_MISMATCH" = "Provided username and email are not correct";
+"CUSTOM_ERROR_PASSWORD_CHANGE_WRONG_CURRENT_PASSWORD" = "Current password is wrong.";
+"CUSTOM_ERROR_PASSWORD_TOO_WEAK" = "Password is too weak. Please choose stronger.";
