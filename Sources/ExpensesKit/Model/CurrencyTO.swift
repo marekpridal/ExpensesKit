@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CurrencyTO: Decodable, Equatable {
+public struct CurrencyTO: Codable, Equatable {
     public let countryCode: String
     public let value: Double
 
