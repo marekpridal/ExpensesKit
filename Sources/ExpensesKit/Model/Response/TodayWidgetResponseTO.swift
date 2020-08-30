@@ -6,10 +6,12 @@
 //
 
 public struct TodayWidgetResponseTO: Decodable {
+    public let categoriesForLastMonth: [CategoryWithSum]
     public let defaultCurrency: String
     public let sumsPerMonth: [MonthWithSum]
 
-    public init(defaultCurrency: String, sumsPerMonth: [MonthWithSum]) {
+    public init(categoriesForLastMonth: [CategoryWithSum], defaultCurrency: String, sumsPerMonth: [MonthWithSum]) {
+        self.categoriesForLastMonth = categoriesForLastMonth
         self.defaultCurrency = defaultCurrency
         self.sumsPerMonth = sumsPerMonth
     }
