@@ -1250,7 +1250,7 @@ public final class Networking: NSObject, Api {
     }
 
     // MARK: - Receipt
-    public func verify(receipt data: Data?, completionHandler: ((Result<Bool, Error>) -> Void)?) {
+    public func verify(receipt data: Data?, completionHandler: ((Result<VerifyActiveSubscriptionResponseTO, Error>) -> Void)?) {
         guard !verifyReceiptRequestCalled else { return }
         verifyReceiptRequestCalled = true
         guard let bearerToken = securityHelper.bearerToken else {
@@ -1297,7 +1297,7 @@ public final class Networking: NSObject, Api {
                     self?.log?.expiration(date: expiresDate)
                 }
                 DispatchQueue.main.async {
-                    completionHandler?(.success(response.hasActiveSubcription))
+                    completionHandler?(.success(response))
                 }
             } else {
                 DispatchQueue.main.async {

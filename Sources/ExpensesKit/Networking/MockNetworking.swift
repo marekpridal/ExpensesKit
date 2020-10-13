@@ -276,7 +276,7 @@ public final class MockNetworking: Api {
     }
 
     // MARK: - Receipt
-    public func verify(receipt data: Data?, completionHandler: ((Result<Bool, Error>) -> Void)?) {
+    public func verify(receipt data: Data?, completionHandler: ((Result<VerifyActiveSubscriptionResponseTO, Error>) -> Void)?) {
     }
 }
 

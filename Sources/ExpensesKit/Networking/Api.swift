@@ -51,5 +51,5 @@ public protocol Api: class {
     func updateNotificationToken(request requestObject: UpdateNotificationTokenTO, completionHandler: ((Result<Void, Error>) -> Void)?)
 
     // MARK: - Receipt
-    func verify(receipt data: Data?, completionHandler: ((Result<Bool, Error>) -> Void)?)
+    func verify(receipt data: Data?, completionHandler: ((Result<VerifyActiveSubscriptionResponseTO, Error>) -> Void)?)
 }
