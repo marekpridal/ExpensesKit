@@ -45,14 +45,14 @@ public final class MockNetworking: Api {
         RecordTO(recordId: 4112, note: "Note", username: "mockUser", categoryId: 7, amount: 100, date: Calendar.current.date(byAdding: .month, value: -2, to: .init())!, latitude: nil, longitude: nil, defaultCurrency: "CZK")
     ]
 
-    public let categories: [CategoryTO] = [
-        CategoryTO(categoryId: 1, username: "mockUser", name: "B_Mock category 1", emojiIcon: "💰", mandatory: false),
-        CategoryTO(categoryId: 2, username: "mockUser", name: "d_Mock category 2", emojiIcon: "💰", mandatory: false),
-        CategoryTO(categoryId: 3, username: "mockUser", name: "A_Mock category 3", emojiIcon: "💰", mandatory: false),
-        CategoryTO(categoryId: 4, username: "mockUser", name: "Č_Mock category 4", emojiIcon: "💰", mandatory: false),
-        CategoryTO(categoryId: 5, username: "mockUser", name: "E_Mock category 5", emojiIcon: "💰", mandatory: false),
-        CategoryTO(categoryId: 6, username: "mockUser", name: "Ě_Mock category 6", emojiIcon: "💰", mandatory: false),
-        CategoryTO(categoryId: 7, username: "mockUser", name: "é_Mock category 7", emojiIcon: "💰", mandatory: false)
+    public let categories: [CategoryResponseTO] = [
+        CategoryResponseTO(categoryId: 1, username: "mockUser", name: "B_Mock category 1", emojiIcon: "💰", mandatory: false, limit: .init(frequency: .month, limit: 1_000)),
+        CategoryResponseTO(categoryId: 2, username: "mockUser", name: "d_Mock category 2", emojiIcon: "💰", mandatory: false, limit: nil),
+        CategoryResponseTO(categoryId: 3, username: "mockUser", name: "A_Mock category 3", emojiIcon: "💰", mandatory: false, limit: .init(frequency: .month, limit: 1_000)),
+        CategoryResponseTO(categoryId: 4, username: "mockUser", name: "Č_Mock category 4", emojiIcon: "💰", mandatory: false, limit: .init(frequency: .month, limit: 1_000)),
+        CategoryResponseTO(categoryId: 5, username: "mockUser", name: "E_Mock category 5", emojiIcon: "💰", mandatory: false, limit: nil),
+        CategoryResponseTO(categoryId: 6, username: "mockUser", name: "Ě_Mock category 6", emojiIcon: "💰", mandatory: false, limit: .init(frequency: .month, limit: 1_000)),
+        CategoryResponseTO(categoryId: 7, username: "mockUser", name: "é_Mock category 7", emojiIcon: "💰", mandatory: false, limit: .init(frequency: .month, limit: 1_000))
     ]
     public let users: [UserResponseTO] = [
         UserResponseTO(username: "mockUser", avatarImageURL: nil, defaultCurrency: "CZK", email: nil),
@@ -186,14 +186,14 @@ public final class MockNetworking: Api {
     }
 
     // MARK: - Category
-    public func insert(category: NewCategoryRequestTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void) {
-        completionHandler(.success(CategoryTO(categoryId: Int.random(in: 1...1_000_000), username: "mockUser", name: category.name, emojiIcon: category.emojiIcon, mandatory: category.mandatory)))
+    public func insert(category: NewCategoryRequestTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void) {
+        completionHandler(.success(CategoryResponseTO(categoryId: Int.random(in: 1...1_000_000), username: "mockUser", name: category.name, emojiIcon: category.emojiIcon, mandatory: category.mandatory, limit: category.limit)))
     }
-    public func update(category: CategoryTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void) {
+    public func update(category: CategoryResponseTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void) {
         completionHandler(.success(category))
     }
-    public func delete(category requestObject: DeleteCategoryRequestTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void) {
-        completionHandler(.success((CategoryTO(categoryId: requestObject.categoryIdToDelete, username: nil, name: "", emojiIcon: nil, mandatory: false))))
+    public func delete(category requestObject: DeleteCategoryRequestTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void) {
+        completionHandler(.success((CategoryResponseTO(categoryId: requestObject.categoryIdToDelete, username: nil, name: "", emojiIcon: nil, mandatory: false, limit: nil))))
     }
 
     // MARK: - User

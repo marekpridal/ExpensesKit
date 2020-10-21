@@ -1,5 +1,5 @@
 //
-//  RegularPaymentFrequency.swift
+//  DateFrequency.swift
 //  App
 //
 //  Created by Marek Přidal on 20/10/2019.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum RegularPaymentFrequency: Int, Codable, CodingKey, Equatable {
+public enum DateFrequency: Int, Codable, CodingKey, Equatable {
     case week = 100
     case month = 200
     case quarter = 300
@@ -19,7 +19,7 @@ public enum RegularPaymentFrequency: Int, Codable, CodingKey, Equatable {
         do {
             let container = try decoder.singleValueContainer()
             let rawValue = try container.decode(Int.self)
-            self = RegularPaymentFrequency(intValue: rawValue) ?? .undefined
+            self = DateFrequency(intValue: rawValue) ?? .undefined
         } catch {
             self = .undefined
         }
