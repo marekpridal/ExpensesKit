@@ -7,6 +7,7 @@
 
 import Foundation
 
+//swiftlint:disable identifier_name
 public struct LimitResponseTO: Codable, Equatable {
      public var id: Int?
      public let frequency: DateFrequency
