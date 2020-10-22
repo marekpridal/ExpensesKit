@@ -28,7 +28,7 @@ public struct CategoryResponseTO: Codable, Equatable {
     private enum CodingKeys: String, CodingKey {
         case categoryId = "id_kategorie"
         case username
-        case name
+        case name = "nazev"
         case emojiIcon
         case mandatory
         case limit
