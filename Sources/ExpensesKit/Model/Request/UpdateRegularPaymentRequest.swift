@@ -16,9 +16,9 @@ public struct UpdateRegularPaymentRequest: Encodable {
     public let originalCurrencyId: String?
     public let defaultCurrencyId: String
     public let originalAmount: Double?
-    public let frequency: RegularPaymentFrequency
+    public let frequency: DateFrequency
 
-    public init(regularPaymentId: Int, note: String?, categoryId: Int, amount: Double, startDate: Date, originalCurrencyId: String?, defaultCurrencyId: String, originalAmount: Double?, frequency: RegularPaymentFrequency) {
+    public init(regularPaymentId: Int, note: String?, categoryId: Int, amount: Double, startDate: Date, originalCurrencyId: String?, defaultCurrencyId: String, originalAmount: Double?, frequency: DateFrequency) {
         self.regularPaymentId = regularPaymentId
         self.note = note
         self.categoryId = categoryId

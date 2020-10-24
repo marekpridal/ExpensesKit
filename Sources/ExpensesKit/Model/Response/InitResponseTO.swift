@@ -7,11 +7,11 @@
 
 public struct InitResponseTO: Decodable {
     public let records: [RecordTO]
-    public let categories: [CategoryTO]
+    public let categories: [CategoryResponseTO]
     public let users: [UserResponseTO]
     public let partners: [SharingResponseTO]
 
-    public init(records: [RecordTO], categories: [CategoryTO], users: [UserResponseTO], partners: [SharingResponseTO]) {
+    public init(records: [RecordTO], categories: [CategoryResponseTO], users: [UserResponseTO], partners: [SharingResponseTO]) {
         self.records = records
         self.categories = categories
         self.users = users

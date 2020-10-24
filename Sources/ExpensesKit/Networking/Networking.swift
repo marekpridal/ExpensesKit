@@ -320,7 +320,7 @@ public final class Networking: NSObject, Api {
     }
 
     // MARK: - Category
-    public func insert(category: NewCategoryRequestTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void) {
+    public func insert(category: NewCategoryRequestTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void) {
         guard let bearerToken = securityHelper.bearerToken else {
             DispatchQueue.main.async {
                 completionHandler(.failure(MissingBearerToken()))
@@ -360,7 +360,7 @@ public final class Networking: NSObject, Api {
                     }
                 } else if let responseData = data {
                     do {
-                        let responseObject = try Networking.decoder.decode(CategoryTO.self, from: responseData)
+                        let responseObject = try Networking.decoder.decode(CategoryResponseTO.self, from: responseData)
                         DispatchQueue.main.async {
                             completionHandler(.success(responseObject))
                         }
@@ -382,7 +382,7 @@ public final class Networking: NSObject, Api {
         }
     }
 
-    public func update(category: CategoryTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void) {
+    public func update(category: CategoryResponseTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void) {
         guard let bearerToken = securityHelper.bearerToken else {
             DispatchQueue.main.async {
                 completionHandler(.failure(MissingBearerToken()))
@@ -427,7 +427,7 @@ public final class Networking: NSObject, Api {
                 }
             } else if let responseData = data {
                 do {
-                    let responseObject = try Networking.decoder.decode(CategoryTO.self, from: responseData)
+                    let responseObject = try Networking.decoder.decode(CategoryResponseTO.self, from: responseData)
                     DispatchQueue.main.async {
                         completionHandler(.success(responseObject))
                     }
@@ -444,7 +444,7 @@ public final class Networking: NSObject, Api {
         }.resume()
     }
 
-    public func delete(category requestObject: DeleteCategoryRequestTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void) {
+    public func delete(category requestObject: DeleteCategoryRequestTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void) {
         guard let bearerToken = securityHelper.bearerToken else {
             DispatchQueue.main.async {
                 completionHandler(.failure(MissingBearerToken()))
@@ -486,7 +486,7 @@ public final class Networking: NSObject, Api {
                     }
                 } else if let responseData = data {
                     do {
-                        let responseObject = try Networking.decoder.decode(CategoryTO.self, from: responseData)
+                        let responseObject = try Networking.decoder.decode(CategoryResponseTO.self, from: responseData)
                         DispatchQueue.main.async {
                             completionHandler(.success(responseObject))
                         }

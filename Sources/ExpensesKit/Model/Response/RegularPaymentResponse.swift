@@ -17,11 +17,11 @@ public struct RegularPaymentResponse: Equatable, Codable {
     public let originalCurrency: String?
     public let defaultCurrency: String
     public let originalAmount: Double?
-    public let frequency: RegularPaymentFrequency
+    public let frequency: DateFrequency
     public let lastProceededDate: Date?
     public let nextProceedDate: Date?
 
-    public init(regularPaymentId: Int, note: String?, owner: String, category: Int, amount: Double, startDate: Date, originalCurrency: String?, defaultCurrency: String, originalAmount: Double?, frequency: RegularPaymentFrequency, lastProceededDate: Date?, nextProceedDate: Date?) {
+    public init(regularPaymentId: Int, note: String?, owner: String, category: Int, amount: Double, startDate: Date, originalCurrency: String?, defaultCurrency: String, originalAmount: Double?, frequency: DateFrequency, lastProceededDate: Date?, nextProceedDate: Date?) {
         self.regularPaymentId = regularPaymentId
         self.note = note
         self.owner = owner

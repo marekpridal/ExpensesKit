@@ -15,7 +15,7 @@ public struct CategoryWithSum: Codable {
     public let mandatory: Bool
     public var sum: Double
 
-    public init(category: CategoryTO, sum: Double = 0) {
+    public init(category: CategoryResponseTO, sum: Double = 0) {
         self.categoryId = category.categoryId
         self.username = category.username
         self.name = category.name

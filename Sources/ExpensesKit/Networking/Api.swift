@@ -20,9 +20,9 @@ public protocol Api: class {
     func delete(record: DeleteRecordRequestTO, completionHandler: @escaping (Result<RecordTO, Error>) -> Void)
 
     // MARK: - Category
-    func insert(category: NewCategoryRequestTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void)
-    func update(category: CategoryTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void)
-    func delete(category requestObject: DeleteCategoryRequestTO, completionHandler: @escaping (Result<CategoryTO, Error>) -> Void)
+    func insert(category: NewCategoryRequestTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void)
+    func update(category: CategoryResponseTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void)
+    func delete(category requestObject: DeleteCategoryRequestTO, completionHandler: @escaping (Result<CategoryResponseTO, Error>) -> Void)
 
     // MARK: - User
     func register(request requestObject: RegisterRequestTO, completionHandler: @escaping ((Result<Void, Error>) -> Void))
