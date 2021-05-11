@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Api: class {
+public protocol Api: AnyObject {
     var securityHelper: SecurityHelperProtocol { get set }
 
     // MARK: - Init date
